@@ -3,17 +3,17 @@
 print('Toegangtickets')
 
 personen = int (input('Met hoeveel'))
-PrijsToegangtickets = personen * 7.45
-print('Prijs', PrijsToegangtickets ,'euro')
+PrijsToegangtickets = personen * 745
+print('Prijs', PrijsToegangtickets ,'cent')
 
 print('VIP-VR Gameseat')
 
 tijd = int (input('Hoeveel minuten?'))
-prijsVR = tijd / 5 * 0.37
+prijsVR = tijd / 5 * 37
 PrijsVR = prijsVR * personen
-print('PrijsVR', PrijsVR ,'euro')
+print('PrijsVR', PrijsVR ,'cent')
 
 Totaal = PrijsToegangtickets + PrijsVR
-print('Totaal', Totaal ,'euro')
+print('Totaal', Totaal ,'cent')
 
-print('Dit geweldige dagje-uit met 4 mensen in de Speelhal met 45 minuten VR kost je maar 43.12 euro')
+print(f'Dit geweldige dagje-uit met {personen} mensen in de Speelhal met {tijd} minuten VR kost je maar {Totaal} cent')
