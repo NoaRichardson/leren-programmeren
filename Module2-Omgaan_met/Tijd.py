@@ -1,11 +1,5 @@
-#Tijd
+#Test
 
-print('Wat is de tijd')
-uren = int(input('Hoeveel uren?'))
-min = int(input('Hoeveel minuten?'))
-
-print(f'Huidige tijd {uren}:{min}')
-Hu = 23 - uren
-Hm = 60 - min
-
-print(f'Nog {Hu} uren en {Hm} minuten')
+leeftijd = int(input('Hoe oud bent u?'))
+Nleeftijd = leeftijd * 3
+print(f'Als u drie keer zo oud zijn bent u: {Nleeftijd}')
