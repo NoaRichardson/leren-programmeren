@@ -5,21 +5,23 @@ a = int(input('Wat is a ='))
 b = int(input('Wat is b ='))
 
 if a > b :
-    max = a
-    min = b
-    print(f'a is het grootste getal : {max}')
-    print(f'Het maximum is {a}')
-    print(f'Het minimum is {b}')
+    Max = a
+    Min = b
+    print(f'a is het grootste getal : {Max}')
+
 
 elif a < b :
-    min = a
-    max = b
-    print(f'a is het kleinste getal : {min}')
-    print(f'Het maximum is {b}')
-    print(f'Het minimum is {a}')
-else :
+    Min = a
+    Max = b
+    print(f'a is het kleinste getal : {Min}')
+   
+else:
     print('a en b zijn even groot')
+    Min = a
+    Max = b
 
+print(f'Maximaal is a: {Max}')
+print(f'Minimaal is b: {Min}')
 
 
 

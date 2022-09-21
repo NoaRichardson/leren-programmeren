@@ -1,39 +1,38 @@
 #Kaas.py
 
-print('Als je antwoord ja is type je 1 als je antwoord nee is type je 2')
-ant = input('Is de kaas geel?')
+geel = input('Is de kaas geel?')
 
-if ant == 'ja':
-    ant2 = input('Zitten er gaten in?')
-    if ant2 == 'ja':
-        ant3 = input('Is de kaas belagelijk duur?')
-        if ant3 == 'ja':
+if geel == 'ja':
+    gaten = input('Zitten er gaten in?')
+    if gaten == 'ja':
+        duur = input('Is de kaas belagelijk duur?')
+        if duur == 'ja':
             print('Emmenthaler')
-        elif ant3 == 'nee':
+        elif duur == 'nee':
             print('Leerdammer') 
             
-    elif ant2 == 'nee':
-     ant4 = str(input('Is de kaas hard als steen?'))
-     if ant4 == 'ja':
+    elif gaten == 'nee':
+     steen = input('Is de kaas hard als steen?')
+     if steen == 'ja':
             print('Parmigiano Reggiano')
-     elif ant4 == 'nee':
+     elif steen == 'nee':
         print('Goudse Kaas')
 
          
 
-elif ant == 'nee':
-    ant5 = input('Heeft de kaas blauwe schimmel?')
-    if ant5 == 'ja':
-        ant6 = input('Heeft de kaas korst?')
-        if ant6 == 'ja':
+elif geel == 'nee':
+    schimmel = input('Heeft de kaas blauwe schimmel?')
+    if schimmel == 'ja':
+        korst = input('Heeft de kaas korst?')
+        if korst == 'ja':
             print('Blue de Rochbaron')
-        elif ant6 == 'nee':
+        elif korst == 'nee':
             print('Foume d Ambert')
-    elif ant5 == 'nee':
-        ant7 = input('Heeft de kaas korst?')
-        if ant7 == 'ja':
+    elif schimmel == 'nee':
+        korst = input('Heeft de kaas korst?')
+        if korst == 'ja':
             print('Camembert')
-        if ant7 == 'nee':
+        if korst == 'nee':
             print('Mozzarella')
      
 

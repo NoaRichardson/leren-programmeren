@@ -3,7 +3,7 @@
 name = input('Wat is je naam?')
 leeftijd = input('Hoe oud ben je?')
 
-print(f'Welcome {name} die is een test om te kijken of je geschikt bent voor deze baan veel succes')
+print(f'Welcome {name} dit is een test om te kijken of je geschikt bent voor deze baan veel succes')
 
 gender = input('Bent u een man of vrouw?')
 
@@ -16,12 +16,10 @@ elif gender == 'vrouw':
 if gender_ == 1:
    snor = input('Heeft u een snor?')
    if snor == 'ja':
-      snor_ = 1
-      if snor_ == 1:
        snor_lengte = int(input('Hoe lang is u snor in cm?'))
        if snor_lengte >= 10:
          print(gender == 'man')
-         gender = True
+         man_met_goede_snor = True
             
 elif gender_ == 2:
    haar_kleur = input('Wat is u haar kleur?')
@@ -31,7 +29,7 @@ elif gender_ == 2:
          haar_lengte = int(input('Hoe lang is u haar in cm?'))
          if haar_lengte >= 20:
             print(gender == 'vrouw')
-            gender = True
+            vrouw_met_juist_haar = True
 
       
 lengte = int(input('Hoe lang bent u in cm?'))
@@ -84,7 +82,7 @@ if ervaring == 'acrobatiek':
       print(ervaring)
       ervaring = True
 
-if gender == True and lengte == True and wegen == True and hoge_hoed == True and opleiding == True and rijbewijs == True and certificaat == True and ervaring == True:
+if (man_met_goede_snor or vrouw_met_juist_haar) and lengte and wegen and hoge_hoed and opleiding and rijbewijs and certificaat and ervaring:
    print('U bent aangenomen')
 else:
    print('U bent niet aangenomen')
