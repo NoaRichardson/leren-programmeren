@@ -1,4 +1,4 @@
-prijs_iphone = int(input('Hoe duur is de iPone?'))
+prijs_iphone = int(input('Hoe duur is de iPhone?'))
 prijs_samsung = int(input('Hoe duur is de Samsung?'))
 prijs_zenfone = int(input('Hoe duur is de Zenfone?'))
 
@@ -12,8 +12,7 @@ elif prijs_iphone < prijs_samsung:
     duurst = prijs_samsung
     goedkoopst = prijs_iphone
     duurst_telefoon = 'samsung'
-    goedkoopst_telefoon = 'iPhone'
-    
+    goedkoopst_telefoon = 'iPhone'   
  
 if (prijs_iphone >= 900) and (prijs_samsung >= 900):
     print(f'De {duurst_telefoon} is het duurst, de telefoon kost : {duurst}')
