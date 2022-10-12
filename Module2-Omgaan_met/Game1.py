@@ -17,7 +17,7 @@ while game == 1:
                     doos_code = input('Code proberen?')
                     if doos_code == 'ja':
                         code = input('')
-                        if code == '2174':
+                        if code == '21744':
                             print('Er zit een sleutel er in')
                             woonkamer_deur = 1
                             room_check = 0
