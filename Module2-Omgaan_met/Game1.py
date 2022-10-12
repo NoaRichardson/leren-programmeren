@@ -87,7 +87,7 @@ while game == 1:
             woonkamer_check = input('Wat wil je checken? het papier op de grond, het schilderij, de boekenkast, de deur of ga terug')  
 
         while woonkamer_check == 'het schilderij':
-            print('Je ziet 2 letters in het schilderij 7 en 4')
+            print('Je ziet 2 cijfers in het schilderij 7 en 4')
             woonkamer_check = 0
 
         while woonkamer_check == 'de boekenkast':
