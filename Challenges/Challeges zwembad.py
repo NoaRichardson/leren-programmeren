@@ -1,5 +1,5 @@
-zwembad_lengte = int(input('Hoe lang is het zwembad in meters?'))
-zwembad_breedte = int(input('Hoe breed is het zwembad in meters?'))
+zwembad_lengte = float(input('Hoe lang is het zwembad in meters?'))
+zwembad_breedte = float(input('Hoe breed is het zwembad in meters?'))
 zwembad_diepte = float(input('Hoe diep is het zwembad in meters?'))
 
 vierkante_meter = round(zwembad_lengte + zwembad_breedte, 2)
