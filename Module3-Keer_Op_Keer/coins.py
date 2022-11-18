@@ -65,8 +65,6 @@ if change > 0: # Als de change groter is dan 0 print hij dit
 else:
   print('done')
   print('Returned:')
-  coin_lijst = (500, 200, 100, 50, 20, 10, 5, 2, 1)
-  return_lijst = (coin_500, coin_200, coin_100, coin_50, coin_20, coin_10, coin_5, coin_2, coin_1)
   print(f"5 euro {coin_500}")
   print(f"2 euro {coin_200}")
   print(f"1 euro {coin_100}")

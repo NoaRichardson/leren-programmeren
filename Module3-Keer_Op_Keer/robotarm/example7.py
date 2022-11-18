@@ -19,5 +19,8 @@ for x in range(6):
       robotArm.moveLeft()
       robotArm.drop()
       robotArm.moveRight()
+
+
+
 # Na jouw code wachten tot het sluiten van de window:
 robotArm.wait()

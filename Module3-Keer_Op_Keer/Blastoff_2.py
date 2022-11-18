@@ -1,5 +1,5 @@
 teller = 30
-while teller >= 0:
+while teller >= 1:
     print(teller)
     teller = teller - 1
 
