@@ -5,5 +5,5 @@ print("Alle weekenddagen zijn:", dagen[5:7])
 x = 0, 1, 2, 3, 4
 dagenR = reversed(dagen)
 dagenR = tuple(dagenR)
-print("De werkdgen omgekeerd zijn:", dagenR[2:7])
+print("De werkdgen omgekeerd zijn:", dagen[4::-1])
 print("De weekenddagen omgekeerd zijn:", dagenR[0:2])
