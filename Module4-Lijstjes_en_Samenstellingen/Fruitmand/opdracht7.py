@@ -2,5 +2,5 @@ from fruitmand import fruitmand
 
 for fruit in fruitmand:
     x = fruit['round']
-    if x is True:
+    if x == True:
         print(fruit['name'])   
