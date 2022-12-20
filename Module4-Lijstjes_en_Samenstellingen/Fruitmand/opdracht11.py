@@ -16,19 +16,17 @@ fruit_round = []
 for fruit in fruitmand:
     if fruit['color'] in {fruit_kleur}:
         fruit_round.append(fruit['round'])
-    
-for tf in fruit_round:
-    if tf is True:
+print(fruit_round) 
+for tof in fruit_round:
+    if tof is True:
         round = round + 1
-    elif tf is False:
+    elif tof is False:
         niet_round = niet_round + 1
-    
+cr = abs(round - niet_round)
 if round > niet_round:
-    cr = round - niet_round
     print(f'Er zijn {cr} meer ronde vruchten dan niet ronde vruchten in de kleur {fruit_kleur}')
 
-elif round < niet_round:
-    cr = niet_round - round 
+elif round < niet_round: 
     print(f'Er zijn {cr} minder ronde vruchten dan niet ronde vruchten in de kleur {fruit_kleur}')
 
 elif round == niet_round:

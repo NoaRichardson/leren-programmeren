@@ -20,11 +20,11 @@ while langste is not (len(fruit['name'])):
     for fruit in fruitmand:
         (len(fruit['name']))
         if langste == (len(fruit['name'])):
-            langste_fruit.append(fruit['name'])
-            langste_fruit.append(fruit['color'])
-            langste_fruit.append(fruit['weight'])
+            naam =(fruit['name'])
+            kleur_fruit = (fruit['color'])
+            gewicht =(fruit['weight'])
             break
 
 
-print(f'De {langste_fruit[0]}({langste} letters) heeft een {langste_fruit[1]} kleur en het gewicht van {langste_fruit[2] / 1000} kg')
+print(f'De {naam} ({langste} letters) heeft een {kleur_fruit} kleur en het gewicht van {gewicht / 1000} kg')
             
