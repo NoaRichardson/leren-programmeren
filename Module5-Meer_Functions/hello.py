@@ -1,4 +1,28 @@
 def function_1():
-    print('Hello from function town')
+    zin = str('Hello from function town')
 
-function_1()
+    return zin
+
+def vraag_hoeveel(vraag: int):
+    while True:
+        towns_hoeveel = input("Hoeveel towns wil je?")
+        if not towns_hoeveel.isnumeric():
+            print("Vul een getal in")
+        else:
+            towns = int(towns_hoeveel)
+            break
+    return towns
+
+zin = str("Hello from function town")
+towns = vraag_hoeveel("Hoeveel towns wil je")
+
+def function_2():
+    for x in range(towns):
+        x = x + 1
+        print(f"{zin} {x}!")
+
+function_2()
+    
+
+
+
