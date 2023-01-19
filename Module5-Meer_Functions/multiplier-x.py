@@ -6,5 +6,3 @@ def keer_som(vraag: int):
 
 nummer = int(input("Welke tafel wilt u zien?"))
 print(keer_som(nummer))
-
-

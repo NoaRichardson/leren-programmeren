@@ -1,5 +1,6 @@
 # Deze functie stelt een vraag, valideert en controleert of de input een valide leeftijd is
 # Functie vraagt het rgel 3-15 is waar het door heen gaat en er komt een int uit
+# codewars
 def vraag_leeftijd_gebruiker(vraag: str) -> int:
     while True:
         leeftijd_string = input(vraag)
