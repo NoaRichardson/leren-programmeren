@@ -13,10 +13,4 @@ while meer_boodschappen != "nee":
     meer_boodschappen = str(input("Wilt u nog meer kopen?")).lower()
     
 
-
 print(dictboodschap)
-
-
-        
-
-
