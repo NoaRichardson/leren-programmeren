@@ -17,8 +17,7 @@ zin = str("Hello from function town")
 towns = vraag_hoeveel("Hoeveel towns wil je")
 
 def function_2():
-    for x in range(towns):
-        x = x + 1
+    for x in range(1,towns+1):
         print(f"{zin} {x}!")
 
 function_2()

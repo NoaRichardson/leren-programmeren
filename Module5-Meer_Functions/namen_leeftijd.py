@@ -1,20 +1,19 @@
-def naam_leeftijd(vraag: str)-> list[dict]:
-    list_nl = []
-    while True:
-        naam = input('naam?')
-        if naam == 'stop':
-            break
-        leeftijd = input('leeftijd?')
-        if leeftijd == 'stop':
-            break
-        else:
-            list_nl.append({naam : leeftijd})
-    return list_nl
+def naam_leeftijd()-> dict:
+    naam = input('naam?')  
+    leeftijd = input('leeftijd?')
+    
+    return {'naam' : naam, 'leeftijd' : leeftijd}
 
 
-list_nl = naam_leeftijd('naam?')
-i = 0
-for namen in list_nl:
-    print(list_nl[i])
-    i = i + 1
-      
+NL_list = []
+
+while True:
+    NL = naam_leeftijd()
+    if NL['naam'] != 'stop':
+        NL_list.append(NL)
+    else:
+        break
+    
+print(NL_list)
+
+    
