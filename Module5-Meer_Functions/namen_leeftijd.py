@@ -9,7 +9,7 @@ NL_list = []
 
 while True:
     NL = naam_leeftijd()
-    if NL['naam'] != 'stop':
+    if NL['naam'] != 'stop' or NL['leeftijd'] != 'stop':
         NL_list.append(NL)
     else:
         break

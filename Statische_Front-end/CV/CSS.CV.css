@@ -1,0 +1,26 @@
+body{
+    background-color:cadetblue;
+    padding: 20px;
+    margin: 10px;
+    
+}
+
+a:hover{
+    background-color: blueviolet;
+    opacity: 0.6;
+}
+
+h1{
+    background-color: beige;
+    text-align-last: center;
+}
+h2{
+    background-color: beige;
+}
+
+p{
+    background-color: cornsilk;
+}
+ul {
+    background-color: cornsilk;
+}

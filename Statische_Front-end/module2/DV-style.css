@@ -1,0 +1,18 @@
+.first {
+    background-color: aqua;
+    color: crimson;
+    text-size-adjust: 30;
+}
+
+.second {
+    background-color: burlywood;
+    color: green;
+}
+
+h1 {
+    color: blue;
+}
+
+p {
+    color: black;
+}
