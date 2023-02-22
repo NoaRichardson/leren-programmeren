@@ -1,12 +1,16 @@
-let getal = prompt("Kies een getal");
-var ruit;
-var index = 0;
-for(let i = 1; i <= getal; i ++){
-    process.stdout.write('')
-    }
-    for(let x = 0; x <= getal * x - 1; x ++){
-        process.stdout.write(getal[index])
-        index =+ 1
-    }
+getal = prompt("Kies een getal");
+antw = document.getElementById("antwoord");
+tot = ""
+tot_2 = " "
 
-console.log(ruit)
+for(i = 1; i <= getal; i ++){   
+    tot += i;
+    document.write(tot + "<br>")    
+}
+
+for(let i = 1; i < getal - 1; i --){
+    for(let j = 1; j < i; i ++){
+        tot_2 += j;
+    }
+    document.write(tot_2 + "<br>")
+}
