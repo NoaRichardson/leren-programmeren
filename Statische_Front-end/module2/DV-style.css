@@ -2,11 +2,15 @@
     background-color: aqua;
     color: crimson;
     text-size-adjust: 30;
+    font-style: italic;
+    padding: 50px;
+    margin: 50px;
 }
 
 .second {
     background-color: burlywood;
     color: green;
+    font-weight: bold;
 }
 
 h1 {
@@ -15,4 +19,11 @@ h1 {
 
 p {
     color: black;
+}
+
+.roze{
+    color:pink;
+}
+.purple{
+    color:purple;
 }

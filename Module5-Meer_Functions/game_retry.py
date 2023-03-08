@@ -22,49 +22,52 @@ def woonkamer_check():
             break
     return check
 
+kamer_2 =""
 while game == 1:
-    while kamer == 1 :
-        while rc_1 == 'het bed':
-            doos = input('Er is een doos onder het bed wil je het proberen te paken?')
-            if doos =='ja':
-                print('Het is te zwaar om te verplaatsen')
-                open_doos = input('Wil je proberen de doos te openen?')
-                if open_doos == 'ja':
-                    print('Het is opslot je hebt een code nodig')
-                    doos_code = input('Code proberen?')
-                    if doos_code == 'ja':
-                        code = input('')
-                        if code == '21744':
-                            print('Er zit een sleutel er in')
-                            woonkamer_deur = 1
-                            rc_1 = room_check_1()
-                        else:
-                            print('De code is fout')
-                    elif doos_code == 'nee':
+def kamer_1():
+    while rc_1 == 'het bed':
+        doos = input('Er is een doos onder het bed wil je het proberen te paken?')
+        if doos =='ja':
+            print('Het is te zwaar om te verplaatsen')
+            open_doos = input('Wil je proberen de doos te openen?')
+            if open_doos == 'ja':
+                print('Het is opslot je hebt een code nodig')
+                doos_code = input('Code proberen?')
+                if doos_code == 'ja':
+                    code = input('')
+                    if code == '21744':
+                        print('Er zit een sleutel er in')
+                        woonkamer_deur = 1
                         rc_1 = room_check_1()
-                elif open_doos == 'nee':
+                    else:
+                        print('De code is fout')
+                elif doos_code == 'nee':
                     rc_1 = room_check_1()
-            elif doos =='nee':
+            elif open_doos == 'nee':
                 rc_1 = room_check_1()
-
-        while rc_1 == 'de deur':
-            if door_sleutel == 0 :
-                print('Je hebt een sleutel nodig')
-                rc_1 = room_check_1()
-            elif door_sleutel == 1 :
-                kamer = 2
-                break
-
-        while rc_1 == 'het bureau':
-            print('Er is een sleutel op het bureau')
-            door_sleutel = 1
+        elif doos =='nee':
             rc_1 = room_check_1()
 
-        while rc_1 == 'het raam':
-            print('Het is op slot van de andere kant')
+    while rc_1 == 'de deur':
+        if door_sleutel == 0 :
+            print('Je hebt een sleutel nodig')
             rc_1 = room_check_1()
+        elif door_sleutel == 1 :
+            kamer_2()
 
-    while kamer == 2:
+    while rc_1 == 'het bureau':
+        print('Er is een sleutel op het bureau')
+        door_sleutel = 1
+        rc_1 = room_check_1()
+
+    while rc_1 == 'het raam':
+        print('Het is op slot van de andere kant')
+        rc_1 = room_check_1()
+    
+return kamer
+
+
+while kamer == 2:
         gang = input('Wil je de kamer verlaten?')
         if gang == 'ja':
             RofL = input('Je kan links of rechts gaan welke kant ga je?').lower()
@@ -79,7 +82,7 @@ while game == 1:
             door_sleutel = 0
             room_check = 0
             kamer = 1
-    while kamer == 3:
+while kamer == 3:
         wkc = woonkamer_check()
         while wkc == 'het papier':
             print('Het is een bon voor 21 boeken')

@@ -114,16 +114,4 @@ while game_1 == "on":
                 door_sleutel = 0
                 room_check = 0
                 kamer = 1
-                break
-
-
-        
-        
-          
-          
-            
-
-            
-
-
-            
+                break     
