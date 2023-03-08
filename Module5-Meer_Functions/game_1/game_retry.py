@@ -5,10 +5,12 @@ while True:
         print("Je moet iets invullen")
     else:
         break
+print(f"Welkom {name_player}.")
+
 # Kamer 1 
+
 room_choice = ['het bed', 'de deur', 'het bureau', 'het raam']
-key_1 = False
-key_2 = False
+room_choice_3 = ['het papier', 'het schilderij', 'de boekenkast', 'de deur', 'ga terug']
 def room_check_1():
     while True:
         check = input('Je bent in een kamer wat wilt u checken? het bed, de deur ,het bureau, het raam').lower()
@@ -23,7 +25,7 @@ def het_bed():
     if ant_bed == 'ja':
         try_code_bed = input("code:")
         if try_code_bed == "21744":
-            key_2 = True
+            print('')
             room_check_1()
         else:
            room_check_1()
@@ -31,30 +33,54 @@ def het_bed():
         room_check_1()
 
 def de_deur():
-    if key_1 == False:
-        print("Je hebt een sleutel nodig")
+    ant_deur = input("Wil je naar de andere kamer?").lower()
+    if ant_deur == 'ja':
+        room_check_2()
+    elif ant_deur == 'nee':
         room_check_1()
-    elif key_1 == True:
-        print('placeholder.')
 
 def het_bureau():
-    if key_1 == False:
-        print("Er is een sleutel op het bureau")
-        room_check_1()
-    else:
-        print("Er is niks anders op het bureau")
-        room_check_1()
+    print("Op het bureau staat 2314")
+    room_check_1()
 
 def het_raam():
     print("Het is op slot van de andere kant")
     room_check_1()
 
+# Kamer 2
+
+def room_check_2():
+    welke_kant = input("Je bent in een gang welke kant ga je op?\n links, rechts of terug?").lower()
+    if welke_kant == "rechts":
+        print("De planken breken onder je voeten")
+        print("YOU DIED")
+        quit()
+    elif welke_kant == "links":
+        room_check_3()
+    elif welke_kant == "terug":
+        room_check_1()
+
+# Kamer 3
+
+def room_check_3():
+    while True:
+        check_2 = input("Wat wil je checken? het papier, het schilderij, de boekenkast, de deur of ga terug")
+        if check_2 not in room_choice_3:
+            print("kies een van de keuzes!")
+        else:
+            break
+    return check_2
+
+
+
+
+# Er zit hier een probleem met de check hij doet bij sommige niks maar het ligt aan welke volgorde je kiest
 check = room_check_1()
 if check == 'het bed':
     het_bed()
-if check == 'de deur':
+elif check == 'de deur':
     de_deur()
-if check == 'het bureau':
+elif check == 'het bureau':
     het_bureau()
-if check == 'het raam':
+elif check == 'het raam':
     het_raam()
