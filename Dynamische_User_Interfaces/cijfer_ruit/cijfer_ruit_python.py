@@ -1,6 +1,7 @@
 getal = int(input("Kies een getal"))
 cijfer = getal + 1
 ruit = ""
+ruit_2 = ""
 
 for x in range(1, cijfer):
     y = str(x)
@@ -9,5 +10,5 @@ for x in range(1, cijfer):
 
 for a in range(cijfer, 1, -1):
     b = str(a)
-    ruit.replace(b, "")
+    ruit_2 += b
     print(ruit + "")
