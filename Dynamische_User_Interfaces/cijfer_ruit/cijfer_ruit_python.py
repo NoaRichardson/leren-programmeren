@@ -1,14 +1,13 @@
 getal = int(input("Kies een getal"))
 cijfer = getal + 1
-ruit = ""
-ruit_2 = ""
+ruit = []
 
 for x in range(1, cijfer):
     y = str(x)
     ruit += y
-    print(ruit + "")
+    print(ruit)
 
-for a in range(cijfer, 1, -1):
+for a in range(getal, 0, -1):
     b = str(a)
-    ruit_2 += b
-    print(ruit + "")
+    ruit.remove(b)
+    print(ruit)
