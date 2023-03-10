@@ -9,46 +9,42 @@ let th_wijn = 0
 let th_fris = 0
 let th_bier = 0
 
-function bestelling(){
-    order = prompt("Wat wil je?")
-    if(order === "stop"){
-        bon()
-    }else{
-        in_menu()
-    }
+function bestelling(drank){
+    drank = prompt("Wat wil je?")
+    return drank
 }
 
-function in_menu(){
-    test = menu.includes(order);
+function in_menu(drank){
+    test = menu.includes(drank);
     if (Boolean(test)){
-        hoeveel_drank()
+        return drank
     }else{
         alert("Dat hebben we niet");
-        bestelling()
+        return drank
     }
 }
 
-function hoeveel_drank(){
+function hoeveel_drank(drank){
     hoeveel = parseInt(prompt("Hoeveel?"))
-    if (order === 'wijn'){
+    if (drank === 'wijn'){
         duur_wijn = hoeveel * prijs_wijn
         th_wijn = th_wijn + hoeveel
         tot_wijn += duur_wijn
-        bestelling()
-    }else if(order === 'fris'){
+        return duur_wijn, th_wijn, tot_wijn
+    }else if(drank === 'fris'){
         duur_fris = hoeveel * prijs_fris
         th_fris = th_fris + hoeveel
         tot_fris += duur_fris
-        bestelling()
+        return duur_fris, th_fris, tot_fris
     }else{
         duur_bier = hoeveel * prijs_bier
         th_bier = th_bier + hoeveel
         tot_bier += duur_bier
-        bestelling()
+        return duur_bier, th_bier, tot_bier
     }
 }
 
-function bon(){
+function bon(hoeveel){
     totaal = tot_wijn + tot_fris + tot_bier
     if(tot_wijn > 0){
         document.write("Wijn" + " " + th_wijn + "x" + " " + tot_wijn + "<br>")
@@ -60,13 +56,18 @@ function bon(){
     document.write("Totaal" + " " + totaal)
 }
 
-bestelling()
 
 drank = ""
 while (drank != 'stop'){
-    drank = vraag_drank()
+    drank = bestelling(drank)
     if (drank != 'stop'){
-        bestelling = verwerk_bestelling(drank) 
+        test = menu.includes(drank)
+        if(Boolean(test)){
+            hoeveel = hoeveel_drank(drank)
+        }else{
+            alert("Dat hebben we niet")
+            drank = bestelling(drank)
+        }
     }
-}
-print_bon(bestelling)
+    }
+bon(hoeveel)
