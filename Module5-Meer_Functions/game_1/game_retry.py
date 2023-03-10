@@ -37,10 +37,7 @@ def het_bed():
 
 def de_deur():
     ant_deur = input("Wil je naar de andere kamer?").lower()
-    if ant_deur == 'ja':
-        room_check_2()
-    elif ant_deur == 'nee':
-        room_check_1()
+    return ant_deur
 
 def het_bureau():
     print("Op het bureau staat 213")
@@ -54,47 +51,69 @@ def het_raam():
 
 def room_check_2():
     welke_kant = input("Je bent in een gang welke kant ga je op?\n links, rechts of terug?").lower()
-    if welke_kant == "rechts":
-        print("De planken breken onder je voeten")
-        print("YOU DIED")
-        quit()
-    elif welke_kant == "links":
-        room_check_3()
-    elif welke_kant == "terug":
-        room_check_1()
+    return welke_kant
 
 # Kamer 3
 
 def room_check_3():
     while True:
-        check_2 = input("Wat wil je checken? het papier, het schilderij, de boekenkast, de deur of ga terug")
+        check_2 = input("Wat wil je checken? het papier, het schilderij, de boekenkast, de deur of ga terug").lower()
         if check_2 not in room_choice_3:
             print("kies een van de keuzes!")
         else:
             break
     return check_2
 
-def het_papier():
-    print("Het is een bon van 21 boeken")
-    room_check_3()
-
-def het_schilderij():
-    print('Je ziet 2 cijfers in het schilderij 7 en 4')
-    room_check_3()
-
-def de_boekenkast():
-    print('Er zijn 4 planken met boeken')
-    room_check_3()
-
 def de_deur_2():
     code_deur = input("Je hebt een code nodig om de deur te openen.\n Wil je het proberen?")
     if code_deur == 'ja':
         try_code_deur = input("Code:")
-        if try_code_deur == "1212":
-            print('You Win!!!')
-        else:
-            print("De code is incorrect")
-            room_check_3
+        return try_code_deur
 
 #Control code
 
+game = ""
+room = 1
+while game != 'won':
+    while room != 1:
+        check = room_check_1()
+        if check == 'het bed':
+            het_bed()
+        elif check == 'de deur':
+            ant_deur = de_deur()
+            if ant_deur == 'ja':
+                room = 2
+            else:
+                room_check_1
+        elif check == 'het bureau':
+            het_bureau()
+        elif check == 'het raam':
+            het_raam()
+        
+    while room == 2:
+        RofL = room_check_2()
+        if RofL == 'recht':
+            print('De planken breken onder je voeten.\n You Died')
+            quit()
+        elif RofL == 'links':
+            room = 3
+        elif RofL == 'terug':
+            room = 1
+        else:
+            print('Kies een van de keuzes!')
+            
+    while room == 3:
+        check_2 = room_check_3()
+        if check_2 == 'het papier':
+            print("Het is een bon van 21 boeken")
+        elif check_2 == 'het schilderij':
+            print('Je ziet 2 cijfers in het schilderij 7 en 4')
+        elif check_2 == 'de boekenkast':
+            print('Er zijn 4 planken met boeken')
+        elif check_2 == 'de deur':
+            try_code_deur = de_deur_2()
+            if try_code_deur == "1212":
+                print('You Win!!!')
+                game = 'won'
+            else:
+                print("De code is incorrect")
