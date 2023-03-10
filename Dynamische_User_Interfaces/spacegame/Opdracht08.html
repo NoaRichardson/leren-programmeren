@@ -17,19 +17,19 @@
         //Eigen acties
         spaceShip.run(function () {
             // code  start
-            teller = 8
-            for(let i = 0; i < 8; i ++){
-                for(let i = 0; i < teller; i ++){
+            for(let i = 8; i < 0; i ++){
+                for(let y = 0; y < i; i ++){
                 spaceShip.moveForward();
                 }
                 spaceShip.rotateLeft();
-                teller = teller - 1
             }
             spaceShip.moveForward();
 
 
             // code  einde
         });
+        // liever 2 verschillende variable in for
+        // Je had geen teller nodig
     </script>
 </body>
 </html>

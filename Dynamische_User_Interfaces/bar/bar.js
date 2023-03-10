@@ -1,4 +1,4 @@
- menu = ['wijn', 'fris', 'bier']
+menu = ['wijn', 'fris', 'bier']
 let prijs_wijn = 4.50
 let prijs_fris = 2.00
 let prijs_bier = 2.25
@@ -61,3 +61,12 @@ function bon(){
 }
 
 bestelling()
+
+drank = ""
+while (drank != 'stop'){
+    drank = vraag_drank()
+    if (drank != 'stop'){
+        bestelling = verwerk_bestelling(drank) 
+    }
+}
+print_bon(bestelling)

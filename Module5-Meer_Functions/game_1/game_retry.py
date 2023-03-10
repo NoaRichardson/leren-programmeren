@@ -7,10 +7,13 @@ while True:
         break
 print(f"Welkom {name_player}.")
 
-# Kamer 1 
+# Room Choice
 
 room_choice = ['het bed', 'de deur', 'het bureau', 'het raam']
 room_choice_3 = ['het papier', 'het schilderij', 'de boekenkast', 'de deur', 'ga terug']
+
+# Kamer 1
+
 def room_check_1():
     while True:
         check = input('Je bent in een kamer wat wilt u checken? het bed, de deur ,het bureau, het raam').lower()
@@ -24,8 +27,8 @@ def het_bed():
     ant_bed = input('Er zit een kluis onder het bed om het te openen\n Heb je een code nodig wile je de code proberen?').lower()
     if ant_bed == 'ja':
         try_code_bed = input("code:")
-        if try_code_bed == "21744":
-            print('')
+        if try_code_bed == "74214":
+            print('Er is een briefje met 1212 op')
             room_check_1()
         else:
            room_check_1()
@@ -40,7 +43,7 @@ def de_deur():
         room_check_1()
 
 def het_bureau():
-    print("Op het bureau staat 2314")
+    print("Op het bureau staat 213")
     room_check_1()
 
 def het_raam():
@@ -71,16 +74,27 @@ def room_check_3():
             break
     return check_2
 
+def het_papier():
+    print("Het is een bon van 21 boeken")
+    room_check_3()
 
+def het_schilderij():
+    print('Je ziet 2 cijfers in het schilderij 7 en 4')
+    room_check_3()
 
+def de_boekenkast():
+    print('Er zijn 4 planken met boeken')
+    room_check_3()
 
-# Er zit hier een probleem met de check hij doet bij sommige niks maar het ligt aan welke volgorde je kiest
-check = room_check_1()
-if check == 'het bed':
-    het_bed()
-elif check == 'de deur':
-    de_deur()
-elif check == 'het bureau':
-    het_bureau()
-elif check == 'het raam':
-    het_raam()
+def de_deur_2():
+    code_deur = input("Je hebt een code nodig om de deur te openen.\n Wil je het proberen?")
+    if code_deur == 'ja':
+        try_code_deur = input("Code:")
+        if try_code_deur == "1212":
+            print('You Win!!!')
+        else:
+            print("De code is incorrect")
+            room_check_3
+
+#Control code
+
