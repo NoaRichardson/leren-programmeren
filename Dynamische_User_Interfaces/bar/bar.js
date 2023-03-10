@@ -66,7 +66,6 @@ while (drank != 'stop'){
             hoeveel = hoeveel_drank(drank)
         }else{
             alert("Dat hebben we niet")
-            drank = bestelling(drank)
         }
     }
     }
