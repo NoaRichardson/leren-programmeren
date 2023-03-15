@@ -9,7 +9,7 @@ let th_wijn = 0
 let th_fris = 0
 let th_bier = 0
 
-function bestelling(drank){
+function bestelling(){
     drank = prompt("Wat wil je?")
     return drank
 }
@@ -59,10 +59,10 @@ function bon(hoeveel){
 
 drank = ""
 while (drank != 'stop'){
-    drank = bestelling(drank)
+    drank = bestelling()
     if (drank != 'stop'){
         test = menu.includes(drank)
-        if(Boolean(test)){
+        if(test){
             hoeveel = hoeveel_drank(drank)
         }else{
             alert("Dat hebben we niet")

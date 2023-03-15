@@ -27,25 +27,12 @@ def het_bed():
     ant_bed = input('Er zit een kluis onder het bed om het te openen\n Heb je een code nodig wile je de code proberen?').lower()
     if ant_bed == 'ja':
         try_code_bed = input("code:")
-        if try_code_bed == "74214":
-            print('Er is een briefje met 1212 op')
-            room_check_1()
-        else:
-           room_check_1()
-    else:
-        room_check_1()
+        return try_code_bed
 
 def de_deur():
     ant_deur = input("Wil je naar de andere kamer?").lower()
     return ant_deur
 
-def het_bureau():
-    print("Op het bureau staat 213")
-    room_check_1()
-
-def het_raam():
-    print("Het is op slot van de andere kant")
-    room_check_1()
 
 # Kamer 2
 
@@ -75,10 +62,12 @@ def de_deur_2():
 game = ""
 room = 1
 while game != 'won':
-    while room != 1:
+    while room == 1:
         check = room_check_1()
         if check == 'het bed':
-            het_bed()
+            bed = het_bed()
+            if bed == '74214':
+                print('Er is een briefje met 1212 op')
         elif check == 'de deur':
             ant_deur = de_deur()
             if ant_deur == 'ja':
@@ -86,9 +75,9 @@ while game != 'won':
             else:
                 room_check_1
         elif check == 'het bureau':
-            het_bureau()
+            print("Op het bureau staat 213")
         elif check == 'het raam':
-            het_raam()
+            print("Het is op slot van de andere kant")
         
     while room == 2:
         RofL = room_check_2()
@@ -111,9 +100,16 @@ while game != 'won':
         elif check_2 == 'de boekenkast':
             print('Er zijn 4 planken met boeken')
         elif check_2 == 'de deur':
-            try_code_deur = de_deur_2()
-            if try_code_deur == "1212":
+            code_deur = de_deur_2()
+            if code_deur == "1212":
                 print('You Win!!!')
                 game = 'won'
             else:
                 print("De code is incorrect")
+        elif check_2 == 'ga terug':
+            room = 2
+
+retry = input("Wil je opnieuw?")
+if retry == 'ja':
+    room = 1
+    game = ""
