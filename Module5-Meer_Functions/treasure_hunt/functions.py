@@ -22,7 +22,7 @@ def getPersonCashInGold(personCash:dict) -> float:
 ##################### M04.D02.O4 #####################
 
 def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
-    pass
+    return silver2gold(copper2silver(people + horses))
 
 ##################### M04.D02.O5 #####################
 

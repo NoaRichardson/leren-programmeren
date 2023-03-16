@@ -1,2 +1,3 @@
-# 15-3-2023
-# Game Retry afmaken M05.D01.08
+# 16-3-2023
+# CJV game retry afronden
+# Verder gaan met M05.02
