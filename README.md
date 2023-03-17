@@ -1,3 +1,2 @@
-# 16-3-2023
-# CJV game retry afronden
-# Verder gaan met M05.02
+# 17-3-2023
+# Verder gaan met Treasure hunt M05.D02.06
