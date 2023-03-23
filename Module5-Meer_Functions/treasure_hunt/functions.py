@@ -36,13 +36,14 @@ def getFromListByKeyIs(list:list, key:str, value:any) -> list:
     return test_list
 
 def getAdventuringPeople(people:list) -> list:
-    return getFromListByKeyIs(friends, 'adventuring', True)
+    return getFromListByKeyIs(people, 'adventuring', True)
 
 def getShareWithFriends(friends:list) -> int:
     return getFromListByKeyIs(friends, 'shareWith', True)
 
 def getAdventuringFriends(friends:list) -> list:
-    return getFromListByKeyIs(friends, 'adventuring', True) and getFromListByKeyIs(friends, 'shareWith', True)
+    friends = getAdventuringPeople(friends)
+    return getShareWithFriends(friends)
 
 ##################### M04.D02.O6 #####################
 
@@ -68,7 +69,17 @@ def getItemsAsText(items:list) -> str:
     return thing_text
 
 def getItemsValueInGold(items:list) -> float:
-    pass
+    total_price = 0
+    for things in items:
+        if things['price']['type'] == 'gold':
+            total_price += things['price']['amount'] * things['amount']
+        elif things['price']['type'] == 'silver':
+            total_price += silver2gold(things['price']['amount'] * things['amount'])
+        elif things['price']['type'] == 'copper':
+            total_price += copper2gold(things['price']['amount'] * things['amount'])
+        elif things['price']['type'] == 'platinum':
+            total_price += platinum2gold(things['price']['amount'] * things['amount'])
+    return round(total_price, 2)
 ##################### M04.D02.O8 #####################
 
 def getCashInGoldFromPeople(people:list) -> float:

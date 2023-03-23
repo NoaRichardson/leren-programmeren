@@ -17,6 +17,7 @@ else:
     print_colorvars(vars=['Test 1 is correct'], color='green')
 
 if getItemsValueInGold(testList1) != 0.24:
+    print(getItemsValueInGold(testList1))
     print_colorvars(vars=['Test 2 is False'], color='red')
 else:
     print_colorvars(vars=['Test 2 is correct'], color='green')
