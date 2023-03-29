@@ -89,15 +89,23 @@ def getCashInGoldFromPeople(people:list) -> float:
         totaal_cash += moneybags['cash']['gold']
         totaal_cash += silver2gold(moneybags['cash']['silver'])
         totaal_cash += copper2gold(moneybags['cash']['copper'])
-    return totaal_cash
+    return round(totaal_cash, 2)
 
 ##################### M04.D02.O9 #####################
 
 def getInterestingInvestors(investors:list) -> list:
-    pass
+    interested_people = []
+    for people in investors:
+        if people['profitReturn'] <= 10:
+            interested_people.append(people)
+    return interested_people
 
 def getAdventuringInvestors(investors:list) -> list:
-    pass
+    adventuring_people = []
+    for people in getInterestingInvestors(investors):
+        if people['adventuring'] == True:
+            adventuring_people.append(people)
+    return adventuring_people
 
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
     pass
