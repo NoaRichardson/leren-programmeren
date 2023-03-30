@@ -108,7 +108,14 @@ def getAdventuringInvestors(investors:list) -> list:
     return adventuring_people
 
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
-    pass
+    TotalInvestors = getAdventuringInvestors(investors)
+    horses_invenstors = len(TotalInvestors)
+    tents_invenstors = len(TotalInvestors)
+    TotalCostInvenstors = getTotalRentalCost(horses_invenstors, tents_invenstors)
+    TotalCostInvenstors += getJourneyFoodCostsInGold(len(TotalInvestors), horses_invenstors)
+    for invenstor in TotalInvestors:
+        TotalCostInvenstors += getItemsValueInGold(gear)
+    return TotalCostInvenstors
 
 ##################### M04.D02.O10 #####################
 

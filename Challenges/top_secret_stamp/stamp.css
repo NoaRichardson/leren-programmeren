@@ -1,0 +1,21 @@
+body{
+    padding: 20px;
+}
+
+button{
+    height: 100px;
+    width: 100px;
+    color:white;
+    background-color: blue;
+    font-family: test;
+}
+
+button:hover{
+    background-color: red;
+    text-decoration: underline;
+}
+
+@font-face {
+    font-family: test;
+    src: url(Top\ Secret\ Stamp.ttf);
+}
