@@ -101,10 +101,7 @@ def getInterestingInvestors(investors:list) -> list:
     return interested_people
 
 def getAdventuringInvestors(investors:list) -> list:
-    adventuring_people = []
-    for people in getInterestingInvestors(investors):
-        if people['adventuring'] == True:
-            adventuring_people.append(people)
+    adventuring_people = getFromListByKeyIs(getInterestingInvestors(investors), 'adventuring', True)
     return adventuring_people
 
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
@@ -133,24 +130,43 @@ def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
 
 def getInvestorsCuts(profitGold:float, investors:list) -> list:
     profitList = []
-    for people in investors:
-        if people['profitReturn'] <= 10:
-            cut = round((profitGold / 100) * people['profitReturn'], 2)
-            profitList.append(cut)
+    for people in getInterestingInvestors(investors):
+        cut = round((profitGold / 100) * people['profitReturn'], 2)
+        profitList.append(cut)
     return profitList
 
 def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
-    profit = 0
-    for cut in investorsCuts:
-        profit += cut
-    profitGold = profitGold - profit
+    profit = sum(investorsCuts)
+    profitGold -= profit
     AdventurerCut = profitGold / fellowship
     return round(AdventurerCut, 2)
 
 ##################### M04.D02.O13 #####################
 
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
-    pass
+    people = [mainCharacter] + friends + investors
+    earnings = []
+    adventuringFriends = getAdventuringFriends(friends)
+    interestingInvestors = getInterestingInvestors(investors)
+    adventuringInvestors = getAdventuringInvestors(investors)
+    investorsCuts = getInvestorsCuts(profitGold, investors)
+    goldCut = 0.0
+    for person in adventuringFriends:
+        bonus =+ 10
+        profitGold -= 10
+    for person in people:
+        start = getPersonCashInGold(person['cash'])
+        if person in interestingInvestors:
+            goldCut = start + investorsCuts
+        elif person is mainCharacter:
+            goldCut = bonus + start      
+        earnings.append({
+            'name' : person['name'],
+            'start': start,
+            'end'  : goldCut
+        })
+    return earnings
+
 
 ##################### view functions #####################
 def print_colorvars(txt:str='{}', vars:list=[], color:str='yellow') -> None:

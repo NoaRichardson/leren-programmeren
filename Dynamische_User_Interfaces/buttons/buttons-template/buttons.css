@@ -1,4 +1,70 @@
-.container{
+#container{
     height: 600px;
     width: 600px;
+    background-image: url(images/bg0.jpg);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#container.click_1{
+    height: 600px;
+    width: 600px;
+    background-image: url(images/bg1.jpg);
+}
+
+#container.click_2{
+    height: 600px;
+    width: 600px;
+    background-image: url(images/bg2.jpg);
+}
+
+#container.click_3{
+    height: 600px;
+    width: 600px;
+    background-image: url(images/bg3.jpg);
+}
+
+#image_smol{
+    height: 160px;
+    width: 160px;
+    background-image: url(images/0.jpg);
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.image_1{
+    height: 160px;
+    width: 160px;
+    background-image: url(images/1.jpg);
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.image_2{
+    height: 160px;
+    width: 160px;
+    background-image: url(images/2.jpg);
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.image_3{
+    height: 160px;
+    width: 160px;
+    background-image: url(images/3.jpg);
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
