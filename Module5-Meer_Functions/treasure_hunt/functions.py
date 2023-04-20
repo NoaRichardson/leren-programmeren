@@ -142,24 +142,39 @@ def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> fl
     return round(AdventurerCut, 2)
 
 ##################### M04.D02.O13 #####################
-
+# 4 maincharacter is getadventurercut + 10 goud van vrienden die mee gaan
+# 2 adventuring investors is getinvenstorscut + getadventuringcut
+# 1 interesting invenstors is getinvenstorscut
+# 3 adventuring friends is getadventurer cut - 10
 def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
     people = [mainCharacter] + friends + investors
     earnings = []
+
     adventuringFriends = getAdventuringFriends(friends)
     interestingInvestors = getInterestingInvestors(investors)
     adventuringInvestors = getAdventuringInvestors(investors)
     investorsCuts = getInvestorsCuts(profitGold, investors)
-    goldCut = 0.0
-    for person in adventuringFriends:
-        bonus =+ 10
-        profitGold -= 10
+    goldCut = profitGold - sum(investorsCuts)
+    end = 0
+
     for person in people:
-        start = getPersonCashInGold(person['cash'])
+        start = getCashInGoldFromPeople([person])
+
         if person in interestingInvestors:
-            goldCut = start + investorsCuts
-        elif person is mainCharacter:
-            goldCut = bonus + start      
+            end = start + investorsCuts[investors.index(person)]
+            if person in adventuringInvestors:
+                end += goldCut / len([mainCharacter] + adventuringFriends + adventuringInvestors)
+
+        elif person in adventuringFriends:
+            end = start + (goldCut / len([mainCharacter] + adventuringFriends + adventuringInvestors)) - 10 
+            earnings[0]['end'] += 10
+        
+        elif person in friends not in adventuringFriends and interestingInvestors:
+            start = end
+
+        else:
+            end += start + goldCut / len([mainCharacter] + adventuringFriends + adventuringInvestors)
+
         earnings.append({
             'name' : person['name'],
             'start': start,

@@ -9,6 +9,9 @@ function click(event){
         event.target.parentElement.classList.remove("click_2");
         event.target.parentElement.classList.add("click_1");
         document.getElementById("image_smol").style.backgroundImage = "url(images/1.jpg)";
+        document.getElementById("button_2").disabled = false;
+        document.getElementById("button_3").disabled = false;
+        document.getElementById("button_1").disabled = true;
     }else if (event.target.id == "button_2"){
         count_2 += 1;
         document.getElementById("button_2").innerHTML = count_2;
@@ -17,6 +20,9 @@ function click(event){
         event.target.parentElement.classList.add("click_2");
         event.target.parentElement.classList.add("image_2");
         document.getElementById("image_smol").style.backgroundImage = "url(images/2.jpg)";
+        document.getElementById("button_1").disabled = false;
+        document.getElementById("button_3").disabled = false;
+        document.getElementById("button_2").disabled = true;
     }else{
         count_3 += 1;
         document.getElementById("button_3").innerHTML = count_3;
@@ -25,6 +31,9 @@ function click(event){
         event.target.parentElement.classList.add("click_3");
         event.target.parentElement.classList.add("image_3");
         document.getElementById("image_smol").style.backgroundImage = "url(images/3.jpg)";
+        document.getElementById("button_1").disabled = false;
+        document.getElementById("button_2").disabled = false;
+        document.getElementById("button_3").disabled = true;
     }
 
 }
