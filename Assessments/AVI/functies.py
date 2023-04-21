@@ -1,3 +1,4 @@
+import math
 EASY_TEXT = """Ik hou van programmeren. Programmeren is leuk. 
 Ik kan veel dingen maken met programmeren. Ik kan een website maken. 
 Ik kan een spel maken. Ik kan een chatbot maken. 
@@ -69,7 +70,7 @@ def AVIscore(text: str) -> int:
             avi.append(words)
             zin = ""
             zin_count += 1
-    gemiddeld = round(len(avi) / zin_count, 2)
+    gemiddeld = math.floor(len(avi) / zin_count)
     if gemiddeld <=7:
         avi_score = 5
     elif gemiddeld == 8:
@@ -80,6 +81,6 @@ def AVIscore(text: str) -> int:
         avi_score = 8
     elif gemiddeld == 11:
         avi_score = 10
-    elif gemiddeld > 11:
+    else:
         avi_score = 12
     return avi_score

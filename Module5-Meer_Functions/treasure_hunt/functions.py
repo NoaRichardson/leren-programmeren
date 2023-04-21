@@ -155,6 +155,7 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
     adventuringInvestors = getAdventuringInvestors(investors)
     investorsCuts = getInvestorsCuts(profitGold, investors)
     goldCut = profitGold - sum(investorsCuts)
+    start = 0
     end = 0
 
     for person in people:
@@ -167,18 +168,21 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
 
         elif person in adventuringFriends:
             end = start + (goldCut / len([mainCharacter] + adventuringFriends + adventuringInvestors)) - 10 
-            earnings[0]['end'] += 10
         
-        elif person in friends not in adventuringFriends and interestingInvestors:
-            start = end
+        elif person in friends not in adventuringFriends:
+            end = start
+        elif person in investors not in interestingInvestors:
+            end = start
 
         else:
             end += start + goldCut / len([mainCharacter] + adventuringFriends + adventuringInvestors)
+            for people in adventuringFriends:
+                end += 10
 
         earnings.append({
             'name' : person['name'],
             'start': start,
-            'end'  : goldCut
+            'end'  : end
         })
     return earnings
 
