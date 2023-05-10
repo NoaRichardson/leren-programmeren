@@ -6,11 +6,18 @@ def hoeveel_bollentjes():
         else:
             print("Sorry dat snap ik niet...")
 
-def HofB():
+def vraag_hoorntje_bakje():
     while True:
-        KIES_LIJST = "hoortje", "bakje"
-        hofb = input("Wilt u dat in een hoortje of bakje?")
+        KIES_LIJST = "hoorntje", "bakje"
+        hofb = input("Wilt u dat in een hoorntje of bakje?")
         if hofb in KIES_LIJST:
                 return hofb
         else:
             print("Sorry dat snap ik niet...")
+
+def meer_bestellen(ijs_houder):
+     order = input(f"Hier is uw {ijs_houder}. Wilt u nog iets anders bestellen?")
+     if order not in ("ja", "nee"):
+          print("Sorry dat snap ik niet...")
+     else:
+          return order
