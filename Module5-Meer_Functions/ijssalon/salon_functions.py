@@ -52,7 +52,30 @@ def aantal_smaken(smaken):
             vanilla_bollentjes += 1
     return aarbei_bollentjes, chocolade_bollentjes, munt_bollentjes, vanilla_bollentjes
 
-def berekenen_bon(hoorntjes_bakjes, aantal_bollentjes_smaken, aantal_hoorntjes, aantal_bakjes):
+def topping():
+    while True:
+        welke_topping = input("Wat voor topping wilt u?\nA)geen\nB)slagroom\nC)sprinkels\nD)caramel saus\nTopping:")
+        if welke_topping not in ("a", "b", "c", "d"):
+            print("Sorry dat begrijp ik niet...")
+        else:
+            return welke_topping
+        
+def berekenen_topping(bollentje_topping, bollentjes, ijs_houder):
+    if bollentje_topping == "a":
+        prijs_topping = 0
+    elif bollentje_topping == "b":
+        prijs_topping = 0.50
+    elif bollentje_topping == "c":
+        prijs_topping = bollentjes * 0.30
+    else:
+        if ijs_houder == "hoorntje":
+            prijs_topping = 0.60
+        else:
+            prijs_topping = 0.90
+    return prijs_topping
+
+
+def berekenen_bon(hoorntjes_bakjes, aantal_bollentjes_smaken, aantal_hoorntjes, aantal_bakjes, prijs_topping):
     totaal = 0
     bon = "---------Papi Gelato---------\n"
     if aantal_bollentjes_smaken[0] > 0:
@@ -77,5 +100,8 @@ def berekenen_bon(hoorntjes_bakjes, aantal_bollentjes_smaken, aantal_hoorntjes, 
     if aantal_bakjes > 0:
         bon += f"Bakjes       {aantal_bakjes} x 0.75 = {hoorntjes_bakjes[1]}\n"
         totaal += hoorntjes_bakjes[1]
-    bon += f"Totaal         {round(totaal, 2)}"
+    if prijs_topping > 0:
+        bon += f"Topping                 {prijs_topping}\n"
+        totaal += prijs_topping
+    bon += f"Totaal                  {round(totaal, 2)}"
     return bon
