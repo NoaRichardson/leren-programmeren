@@ -16,8 +16,15 @@ def vraag_hoorntje_bakje():
             print("Sorry dat snap ik niet...")
 
 def meer_bestellen(ijs_houder):
-     order = input(f"Hier is uw {ijs_houder}. Wilt u nog iets anders bestellen?")
-     if order not in ("ja", "nee"):
-          print("Sorry dat snap ik niet...")
-     else:
-          return order
+     while True:
+        order = input(f"Hier is uw {ijs_houder}. Wilt u nog iets anders bestellen?")
+        if order not in ("ja", "nee"):
+            print("Sorry dat snap ik niet...")
+        else:
+            return order
+     
+def bon(aantal_bollentjes, aantal_hoorntjes, aantal_bakjes):
+     prijs_bollentjes = round(aantal_bollentjes * 1.10, 2)
+     prijs_hoorntjes = round(aantal_hoorntjes * 1.25, 2)
+     prijs_bakjes = round(aantal_bakjes * 0.75, 2)
+     return prijs_bollentjes, prijs_hoorntjes, prijs_bakjes
