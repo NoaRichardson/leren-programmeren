@@ -4,7 +4,7 @@ aantal_bollentjes = 0
 aantal_hoorntjes = 0
 aantal_bakjes = 0
 smaken = []
-print("Welkom bij Papi Gelato je mag alle smaken kiezen zoland het maar vanille is.")
+print("Welkom bij Papi Gelato.")
 
 order = "ja"
 while order == "ja":
