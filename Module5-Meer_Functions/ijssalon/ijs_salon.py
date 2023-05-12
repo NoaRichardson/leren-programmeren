@@ -3,7 +3,6 @@ from salon_functions import *
 order = ""
 zaken_order = ""
 lijst_smaken_liters = [0, 0, 0, 0]
-prijs_liter = 9.80
 aantal_hoorntjes = 0
 aantal_bakjes = 0
 prijs_topping = 0
