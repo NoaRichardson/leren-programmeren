@@ -69,12 +69,10 @@
     background-size: cover;
 }
 
-.button_1{
-    color: green;
+.button{
+    background-color: green;
 }
-.button_2{
-    color: green;
-}
-.button_3{
-    color: green;
+
+button:disabled{
+    background-color: red;
 }

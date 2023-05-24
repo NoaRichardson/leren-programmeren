@@ -7,6 +7,7 @@ aantal_hoorntjes = 0
 aantal_bakjes = 0
 prijs_topping = 0
 smaken = []
+
 klant = wat_voor_klant()
 if klant == "1":
     print("Welkom bij Papi Gelato.")
