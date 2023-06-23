@@ -9,10 +9,6 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-# 1 Find the green and remove from copy list and put in other list
-# 2 Find yellow remove from copy list put with green in order
-# 3 Print the colors right
-
 def try_word():
     while True:
         guess = input("Raad:")
@@ -76,12 +72,11 @@ def print_guess(green, yellow, guess):
     return result_guess
 
 def bijhouden_guess(result_guess, test):
-    guessed = []
     index = 0
     for letter in test:
-        if letter != "_":
-            guessed.append(letter)
+        if result_guess[index] != "_":
+            test[index] = result_guess[index]
             index += 1
-        elif result_guess[index] != "_":
-            guessed.append(result_guess[index])
-    return guessed
+        else:
+            index += 1
+    return test

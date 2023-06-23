@@ -5,7 +5,7 @@ import random
 word = random.choice(words)
 poging = 5
 hoeveel_letter = f"{word[0]}____"
-test = [f"{word[0]}", "_", "_", "_", "_"]
+test = ["_", "_", "_", "_", "_"]
 print(hoeveel_letter)
 print(word)
 for x in range(poging):
@@ -14,8 +14,8 @@ for x in range(poging):
     test_list = remove_green(green, word)
     yellow = find_yellow(test_list, guess)
     result_guess = print_guess(green, yellow, guess)
-    # guessed_right = bijhouden_guess(result_guess, test)
-    # test = result_guess
+    guessed_right = bijhouden_guess(result_guess, test)
     print("")
-    # print(''.join(result_guess))
-# Fix zodat hij je guesses bijhoud
+    print(''.join(test))
+
+# Test veranderd meteen als result guess veranderd
