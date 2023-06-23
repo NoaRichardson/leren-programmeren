@@ -17,5 +17,3 @@ for x in range(poging):
     guessed_right = bijhouden_guess(result_guess, test)
     print("")
     print(''.join(test))
-
-# Test veranderd meteen als result guess veranderd
