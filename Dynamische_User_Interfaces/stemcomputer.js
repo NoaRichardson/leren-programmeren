@@ -12,11 +12,11 @@ buttonVotes.forEach((item) => {
     button.innerHTML = item.name;
     let contentContainer = document.getElementById("vote");
     contentContainer.appendChild(button);
-    
+
     //Create event for the buttons
-    button.onclick = function() {
-        addVote(item.id);
-    }
+    button.addEventListener('click', () => {
+        addVote(item.id)
+    })   
 })
 
 //Create result button
@@ -27,9 +27,9 @@ const contentContainer = document.getElementById("vote");
 contentContainer.appendChild(resultButton);
 
 //Create event for result button
-resultButton.onclick = function() {
-    countUp();
-}
+resultButton.addEventListener('click', () => {
+    countUp()
+})
 
 //-----FUNCTION-----//
 
