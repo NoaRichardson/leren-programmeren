@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    background: grey;
+    width: 600px;
+    height: 530px;
+    padding: 20px;
+    padding-left: 30px;
+}
+
+button {
+    background-color: darkgreen;
+    width: 100px;
+    height: 70px;
+    margin: 0 20px 20px 0;
+    font-size: 35px;
+    border: none;
+}
