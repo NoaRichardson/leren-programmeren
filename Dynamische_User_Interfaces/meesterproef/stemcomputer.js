@@ -10,7 +10,7 @@ buttonVotes.forEach((item) => {
     //Create the buttons
     let button = document.createElement("button");
     button.innerHTML = item.name;
-    let contentContainer = document.getElementById("vote");
+    let contentContainer = document.getElementById("container");
     contentContainer.appendChild(button);
 
     //Create event for the buttons
@@ -23,7 +23,7 @@ buttonVotes.forEach((item) => {
 const resultButton = document.createElement("button");
 resultButton.innerHTML = "Stemmen tellen";
 resultButton.classList.add("result_button")
-const contentContainer = document.getElementById("vote");
+const contentContainer = document.getElementById("container");
 contentContainer.appendChild(resultButton);
 
 //Create event for result button

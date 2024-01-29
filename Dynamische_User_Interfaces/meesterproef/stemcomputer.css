@@ -1,25 +1,26 @@
-.wrapper .wrapper__header {
+#title {
+  display: flex;
+  align-items: center;
   background-color: #469176;
   height: 100px;
   display: flex;
   justify-content: center;
 }
-.wrapper .wrapper__title {
-  display: flex;
-  align-items: center;
-}
-.wrapper .wrapper__footer {
-  background-color: #343e50;
-}
-.wrapper .wrapper__stem-container {
+
+#container {
   background-color: white;
   display: flex;
   justify-content: center;
   margin: 50px 0;
 }
-.wrapper .wrapper__id {
+
+#footer {
+  background-color: #343e50;
   color: white;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
 }
 
 button {

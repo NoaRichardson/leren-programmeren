@@ -1,0 +1,47 @@
+#title {
+    display: flex;
+    align-items: center;
+    background-color: #469176;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+#footer {
+    background-color: #343e50;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+button {
+    background: rgb(41, 81, 192);
+    color: white;
+    font-size: 18px;
+    height: 50px;
+    margin-right: 10px;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.result_button {
+    background: #252c38;
+    &:hover {
+        transition: 0.2s ease-in-out;
+        background: transparent;
+        color: black;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+}
